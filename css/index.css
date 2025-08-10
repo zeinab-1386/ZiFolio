@@ -9,6 +9,7 @@
     font-family: 'Open Sans', sans-serif;
     overflow-x: hidden;
     overflow-y:auto ;
+    scroll-behavior: smooth;
   }
 
   /* تم تاریک */
@@ -611,7 +612,7 @@ transform: translateZ(0);
 }
 
 .contact-wrapper {
-  max-width: 900px;
+  /* max-width: 900px; */
   width: 100%;
   display: flex;
   background-color: #141414;
