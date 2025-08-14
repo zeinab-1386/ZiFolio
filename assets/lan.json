@@ -1,0 +1,93 @@
+{
+    "en": {
+      "header": {
+        "home": "Home",
+        "about": "About",
+        "services": "Services",
+        "contact": "Contact",
+        "callMe": "Call Me !"
+      },
+
+      "hero": {
+      "title": "Hi ! I'm <span class='name'>Zeinab</span>",
+      "name": "Zeinab",
+      "subtitle": "Transforming digital experiences with dynamic design, powerful code, and a focus on performance and optimization."
+      },
+
+      "title": {
+        "name": "zeinab"
+      },
+
+      "about": {
+      "title": "About Me",
+      "text": "I’m Zeynab, a full-stack web developer based in Mashhad. <br> I’m passionate about building websites that aren’t just functional, but also meaningful, organized, and visually cohesive. My focus is on blending precise coding with minimalistic, user-centric design, where every detail matters, and both form and function are equally important.<br>On the backend, I work with PHP and MySQL, while on the frontend, I leverage tools like Tailwind CSS and Alpine.js to create modern, responsive interfaces. Beyond technical skills, I’m also involved in ideation and crafting cohesive digital experiences.<br>Currently, I’m diving into SEO and search engine optimization — because a great website deserves to be seen.<br>This portfolio is not just a collection of my work; it’s a glimpse into my professional journey, my design philosophy, and the standard I hold myself and my projects to."
+      },
+
+      "slider": {
+        "title": "automating<br>reflection",
+        "subtitle": "cutting-edge reflection station for students and teachers, combining hardware and AI technology.",
+        "slides": [
+          {
+            "caption": "Lorem, ipsum dolor sit amet consectetur  <br>adipisicing elit. Ea culpa vel in sapiente omnis rb<br>repellendus magni? Beatae natus veritatis molestiae.",
+            "link": "Read More..."
+          },
+          {
+            "caption": "Lorem, ipsum dolor sit amet consectetur  <br>adipisicing elit. Ea culpa vel in sapiente omnis rb<br>repellendus magni? Beatae natus veritatis molestiae.",
+            "link": "Read More..."
+          },
+          {
+            "caption": "Lorem, ipsum dolor sit amet consectetur  <br>adipisicing elit. Ea culpa vel in sapiente omnis rb<br>repellendus magni? Beatae natus veritatis molestiae.",
+            "link": "Read More..."
+          }
+        ]
+      }
+
+    },
+
+
+    "fa": {
+      "header": {
+        "home": "خانه",
+        "about": "درباره ما",
+        "services": "خدمات",
+        "contact": "تماس",
+        "callMe": "با من تماس بگیر !"
+      },
+
+      "hero": {
+      "title": "سلام! من <span class='name'>زینب</span> هستم",
+      "subtitle": "تبدیل تجربه‌های دیجیتال با طراحی پویا، کدنویسی قدرتمند و تمرکز بر عملکرد و بهینه‌سازی."
+      },
+
+      "title": {
+        "name": "زینب"
+      },
+
+       "about": {
+      "title": "درباره من",
+      "text": "من زینب هستم، توسعه‌دهنده فول‌استک وب مستقر در مشهد. <br>به ساخت وبسایت‌هایی علاقه‌مندم که نه تنها کاربردی هستند، بلکه معنی‌دار، سازمان‌یافته و بصری هماهنگ باشند. تمرکز من بر ترکیب کدنویسی دقیق با طراحی مینیمال و کاربرمحور است، جایی که هر جزئیات اهمیت دارد و هم فرم و هم عملکرد برابر مهم هستند.<br>در سمت بک‌اند، با PHP و MySQL کار می‌کنم و در سمت فرانت‌اند، از ابزارهایی مانند Tailwind CSS و Alpine.js برای ایجاد رابط‌های مدرن و واکنش‌گرا استفاده می‌کنم. فراتر از مهارت‌های فنی، در ایده‌پردازی و خلق تجربه‌های دیجیتال هماهنگ نیز مشارکت دارم.<br>در حال حاضر، به SEO و بهینه‌سازی موتور جستجو مشغولم — چون یک وبسایت عالی شایسته دیده شدن است.<br>این پرتفولیو تنها مجموعه‌ای از کارهایم نیست؛ بلکه نگاهی به مسیر حرفه‌ای من، فلسفه طراحی من و استانداردی است که برای خودم و پروژه‌هایم دارم."
+      },
+
+
+      "slider": {
+      "title": "خودکارسازی<br>بازتاب",
+      "subtitle": "ایستگاه بازتاب پیشرفته برای دانش‌آموزان و معلمان، با ترکیب سخت‌افزار و فناوری هوش مصنوعی.",
+      "slides": [
+        {
+          "caption": "لورم ایپسوم متن ساختگی برای پروژه ۱ <br>نمونه‌ای از طراحی و توسعه حرفه‌ای<br>مهارت‌ها و جزئیات در این پروژه رعایت شده است.",
+          "link": "مطالعه بیشتر..."
+        },
+        {
+          "caption": "لورم ایپسوم متن ساختگی برای پروژه ۲ <br>نمونه‌ای از طراحی و توسعه حرفه‌ای<br>مهارت‌ها و جزئیات در این پروژه رعایت شده است.",
+          "link": "مطالعه بیشتر..."
+        },
+        {
+          "caption": "لورم ایپسوم متن ساختگی برای پروژه ۳ <br>نمونه‌ای از طراحی و توسعه حرفه‌ای<br>مهارت‌ها و جزئیات در این پروژه رعایت شده است.",
+          "link": "مطالعه بیشتر..."
+          }
+        ]
+      }
+  
+    }
+  }
+  

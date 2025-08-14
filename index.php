@@ -15,11 +15,12 @@
   
   <!-- منوی اصلی -->
   <div class="menu">
-    <a href="#">Home</a>
-    <a href="#">About</a>
-    <a href="#">Services</a>
-    <a href="#">Contact</a>
-  </div>
+  <a href="#" data-key="header.home">Home</a>
+  <a href="#" data-key="header.about">About</a>
+  <a href="#" data-key="header.services">Services</a>
+  <a href="#" data-key="header.contact">Contact</a>
+  <button id="lang-toggle">FA</button>
+</div>
 
   <div class="box">
         <!-- آیکون خورشید و ماه -->
@@ -35,26 +36,27 @@
         </svg>
       </div> -->
         <!-- دکمه تماس -->
-        <button class="contact-btn" id="contactBtn" onclick="callNow()">Call Me !</button>
+        <button class="contact-btn" data-key="header.callMe" id="contactBtn" onclick="callNow()">Call Me !</button>
   </div>
 
-  <!-- منوی همبرگری برای موبایل -->
+
   <div class="menu-mobile" onclick="toggleMenu()">☰</div>
 </div>
 
 
   <div class="home">
-    <!-- 🎥 ویدیو بکگراند -->
+
     <video autoplay loop muted playsinline class="video-background">
       <source src="/zizi_root/vid/animation.mp4" type="video/mp4">
       Your browser does not support the video tag.
     </video>
 
-    <!-- 💬 محتوای سایت -->
-    <div class="content">
-      <h1>Hi ! Im <span class="name">Zeianb</span></h1>
-      <p>Transforming digital experiences with dynamic design, powerful code, and a focus on performance and optimization.</p>
 
+    <div class="content">
+      <h1 data-key="hero.title">Hi ! I'm <span class="name" data-key="hero.name">Zeinab</span></h1>
+      <p data-key="hero.subtitle">
+        Transforming digital experiences with dynamic design, powerful code, and a focus on performance and optimization.
+      </p>
 
           <div class="link">
             
@@ -86,15 +88,13 @@
 
   <script>
     function callNow() {
-  let phoneNumber = "09123456789"; // شماره تلفن خود را وارد کنید
+  let phoneNumber = "09057759767"; 
   window.location.href = `tel:${phoneNumber}`;
 }
 
-// بررسی اندازه صفحه برای پنهان کردن یا نمایش دکمه تماس
 function toggleCallButton() {
   const contactBtn = document.getElementById("contactBtn");
 
-  // اگر عرض صفحه کمتر از 768px باشد، دکمه تماس نمایش داده می‌شود
   if (window.innerWidth <= 768) {
     contactBtn.style.display = "block";
   } else {
@@ -112,8 +112,8 @@ window.addEventListener("resize", toggleCallButton);
   <div class="extra-content">
     <div class="About">
       <div class="text">
-        <h1>About Me</h1>
-        <p>
+        <h1 data-key="about.title">About Me</h1>
+        <p data-key="about.text">
           I’m Zeynab, a full-stack web developer based in Mashhad. <br>
           I’m passionate about building websites that aren’t just functional, but also meaningful, organized, and visually cohesive. My focus is on blending precise coding with minimalistic, user-centric design, where every detail matters, and both form and function are equally important.
 
@@ -181,8 +181,8 @@ function toggleMenu() {
 
 <section class="slider-section">
   <div class="slider-text">
-    <h1>automating<br>reflection</h1>
-    <p>cutting-edge reflection station for students and teachers, combining hardware and AI technology.</p>
+    <h1 data-key="slider.title">automating<br>reflection</h1>
+    <p data-key="slider.subtitle">cutting-edge reflection station for students and teachers, combining hardware and AI technology.</p>
     <div class="nav">
       <button id="prev">&#8592;</button>
       <button id="next">&#8594;</button>
@@ -193,16 +193,16 @@ function toggleMenu() {
     <div class="slides">
       <div class="slide">
         <img src="./1.jpg" alt="Project 1" width="100%" height="50% "/>
-        <div class="caption">
+        <div class="caption" data-key="slider.slides.0.caption">
           Lorem, ipsum dolor sit amet consectetur  <br>
           adipisicing elit. Ea culpa vel in sapiente omnis rb
           <br>repellendus magni? Beatae natus veritatis molestiae?<br>
-           <a href="/project.php">Read More...</a>
+           <a href="/project.php" data-key="slider.link1">Read More...</a>
         </div>
       </div>
       <div class="slide">
         <img src="./2.jpg" alt="Project 2" width="100%"  height="50% "/>
-        <div class="caption">
+        <div class="caption" data-key="slider.slides.1.caption">
         Lorem, ipsum dolor sit amet consectetur  <br>
           adipisicing elit. Ea culpa vel in sapiente omnis rb
           <br>repellendus magni? Beatae natus veritatis molestiae?<br>
@@ -212,7 +212,7 @@ function toggleMenu() {
       </div>
       <div class="slide">
         <img src="./3.jpg" alt="Project 3" width="100%"  height="50% "/>
-        <div class="caption">
+        <div class="caption" data-key="slider.slides.2.caption">
         Lorem, ipsum dolor sit amet consectetur  <br>
           adipisicing elit. Ea culpa vel in sapiente omnis rb
           <br>repellendus magni? Beatae natus veritatis molestiae?<br>
@@ -385,8 +385,38 @@ function toggleMenu() {
 </footer>
 
 <!-- FontAwesome for icons -->
-<script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script>
+<!-- <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script> -->
 
+<script>
+  // زبان پیش‌فرض
+let currentLang = localStorage.getItem("lang") || "en";
+
+// لود فایل JSON و اعمال ترجمه
+function loadLanguage(lang) {
+  fetch("assets/lan.json")
+    .then(res => res.json())
+    .then(data => {
+      document.querySelectorAll("[data-key]").forEach(el => {
+        const keys = el.getAttribute("data-key").split(".");
+        let text = data[lang];
+        keys.forEach(k => text = text[k]);
+        el.innerHTML = text;
+      });
+      localStorage.setItem("lang", lang);
+      document.getElementById("lang-toggle").innerText = lang === "en" ? "FA" : "EN";
+    });
+}
+
+// رویداد دکمه
+document.getElementById("lang-toggle").addEventListener("click", () => {
+  currentLang = currentLang === "en" ? "fa" : "en";
+  loadLanguage(currentLang);
+});
+
+// اولین بار که صفحه لود میشه
+loadLanguage(currentLang);
+
+</script>
   
 </body>
 </html>
