@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ZiZi Portfolio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css" />
   <link rel="stylesheet" href="/zizi_root/css/index.css">
   <link rel="icon" href="/zizi_root/img/zizi.logo.png">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -19,7 +20,10 @@
   <a href="#" data-key="header.about">About</a>
   <a href="#" data-key="header.services">Services</a>
   <a href="#" data-key="header.contact">Contact</a>
-  <button id="lang-toggle">FA</button>
+  <button id="lang-toggle" style="background:none; border:none; cursor:pointer; font-size:24px;">
+  <span class="fi fi-ir fis"></span> 
+</button>
+</button>
 </div>
 
   <div class="box">
@@ -179,7 +183,7 @@ function toggleMenu() {
   </script>
 
 
-<section class="slider-section">
+<section class="slider-section" class="no-rtl">
   <div class="slider-text">
     <h1 data-key="slider.title">automating<br>reflection</h1>
     <p data-key="slider.subtitle">cutting-edge reflection station for students and teachers, combining hardware and AI technology.</p>
@@ -197,8 +201,9 @@ function toggleMenu() {
           Lorem, ipsum dolor sit amet consectetur  <br>
           adipisicing elit. Ea culpa vel in sapiente omnis rb
           <br>repellendus magni? Beatae natus veritatis molestiae?<br>
-           <a href="/project.php" data-key="slider.link1">Read More...</a>
+           
         </div>
+        <a class="linka" href="/project.php" data-key="slider.slides.0.link">Read More...</a>
       </div>
       <div class="slide">
         <img src="./2.jpg" alt="Project 2" width="100%"  height="50% "/>
@@ -206,9 +211,8 @@ function toggleMenu() {
         Lorem, ipsum dolor sit amet consectetur  <br>
           adipisicing elit. Ea culpa vel in sapiente omnis rb
           <br>repellendus magni? Beatae natus veritatis molestiae?<br>
-          <a href="/project.php">Read More...</a>
-
         </div>
+        <a class="linka" href="/project.php" data-key="slider.slides.1.link">Read More...</a>
       </div>
       <div class="slide">
         <img src="./3.jpg" alt="Project 3" width="100%"  height="50% "/>
@@ -216,8 +220,8 @@ function toggleMenu() {
         Lorem, ipsum dolor sit amet consectetur  <br>
           adipisicing elit. Ea culpa vel in sapiente omnis rb
           <br>repellendus magni? Beatae natus veritatis molestiae?<br>
-          <a href="/project.php">Read More...</a>
         </div>
+        <a class="linka" href="/project.php" data-key="slider.slides.2.link">Read More...</a>
       </div>
     </div>
     <div class="dots"></div>
@@ -294,7 +298,7 @@ function toggleMenu() {
 
 
 <section id="skills" class="skills-section">
-  <h2>My Skills</h2>
+  <h2 data-key="skill.title">My Skills</h2>
   <div class="skills-container">
     <div class="skill">
       <h3>HTML</h3>
@@ -346,29 +350,31 @@ function toggleMenu() {
 
 
 <div class="contact-wrapper">
-    <div class="contact-left">
-      <h1>Contact Me</h1>
-      <p>I'd love to hear from you! Whether you have a question, a project, or just want to say hi — feel free to reach out using this form.</p>
-    </div>
-    <div class="contact-right">
-      <form class="contact-form">
-        <input type="text" placeholder="Your Name" required />
-        <input type="email" placeholder="Your Email" required />
-        <textarea placeholder="Your Message..." required></textarea>
-        <button type="submit">Send Message</button>
-      </form>
-    </div>
+  <div class="contact-left">
+    <h1 data-key="contact.title">Contact Me</h1>
+    <p data-key="contact.description">
+      I'd love to hear from you! Whether you have a question, a project, or just want to say hi — feel free to reach out using this form.
+    </p>
   </div>
+  <div class="contact-right">
+    <form class="contact-form">
+      <input type="text" placeholder="Your Name" data-key-placeholder="contact.form.name" required />
+      <input type="email" placeholder="Your Email" data-key-placeholder="contact.form.email" required />
+      <textarea placeholder="Your Message..." data-key-placeholder="contact.form.message" required></textarea>
+      <button type="submit" data-key="contact.form.submit">Send Message</button>
+    </form>
+  </div>
+</div>
 
 
 
 
-<!-- Footer Section -->
+
 <footer class="site-footer">
   <div class="footer-container">
     <div class="footer-brand">
-      <h2>YourName</h2>
-      <p>Thanks for visiting my portfolio!</p>
+      <h2 data-key="footer.brandName">YourName</h2>
+      <p data-key="footer.thanks">Thanks for visiting my portfolio!</p>
     </div>
 
     <div class="footer-social">
@@ -380,15 +386,13 @@ function toggleMenu() {
   </div>
 
   <div class="footer-bottom">
-    <p>&copy; 2025 YourName. All rights reserved.</p>
+    <p data-key="footer.copy">&copy; 2025 YourName. All rights reserved.</p>
   </div>
 </footer>
 
-<!-- FontAwesome for icons -->
-<!-- <script src="https://kit.fontawesome.com/yourkitid.js" crossorigin="anonymous"></script> -->
-
 <script>
-  // زبان پیش‌فرض
+
+// زبان پیش‌فرض
 let currentLang = localStorage.getItem("lang") || "en";
 
 // لود فایل JSON و اعمال ترجمه
@@ -396,14 +400,34 @@ function loadLanguage(lang) {
   fetch("assets/lan.json")
     .then(res => res.json())
     .then(data => {
+      // تغییر متن تگ‌ها
       document.querySelectorAll("[data-key]").forEach(el => {
         const keys = el.getAttribute("data-key").split(".");
         let text = data[lang];
         keys.forEach(k => text = text[k]);
         el.innerHTML = text;
       });
+
+      // تغییر placeholder ها
+      document.querySelectorAll("[data-key-placeholder]").forEach(el => {
+        const keys = el.getAttribute("data-key-placeholder").split(".");
+        let text = data[lang];
+        keys.forEach(k => text = text[k]);
+        el.setAttribute("placeholder", text);
+      });
+
+      // تنظیم راست‌چین یا چپ‌چین
+      document.documentElement.setAttribute("lang", lang);
+      document.documentElement.setAttribute("dir", lang === "fa" ? "rtl" : "ltr");
+
+      // تغییر آیکون پرچم دکمه
+      const langToggle = document.getElementById("lang-toggle");
+      langToggle.innerHTML = lang === "en"
+        ? '<span class="fi fi-ir"></span>' // پرچم انگلیس
+        : '<span class="fi fi-gb"></span>'; // پرچم ایران
+
+      // ذخیره زبان
       localStorage.setItem("lang", lang);
-      document.getElementById("lang-toggle").innerText = lang === "en" ? "FA" : "EN";
     });
 }
 
@@ -417,6 +441,6 @@ document.getElementById("lang-toggle").addEventListener("click", () => {
 loadLanguage(currentLang);
 
 </script>
-  
+
 </body>
 </html>

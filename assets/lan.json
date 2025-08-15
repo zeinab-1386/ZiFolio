@@ -26,6 +26,7 @@
       "slider": {
         "title": "automating<br>reflection",
         "subtitle": "cutting-edge reflection station for students and teachers, combining hardware and AI technology.",
+        "link1": "read More...",
         "slides": [
           {
             "caption": "Lorem, ipsum dolor sit amet consectetur  <br>adipisicing elit. Ea culpa vel in sapiente omnis rb<br>repellendus magni? Beatae natus veritatis molestiae.",
@@ -40,7 +41,28 @@
             "link": "Read More..."
           }
         ]
+      },
+
+      "skill":{
+        "title": "My skills"
+      },
+
+      "contact": {
+      "title": "Contact Me",
+      "description": "I'd love to hear from you! Whether you have a question, a project, or just want to say hi — feel free to reach out using this form.",
+      "form": {
+        "name": "Your Name",
+        "email": "Your Email",
+        "message": "Your Message...",
+        "submit": "Send Message"
       }
+    },
+
+    "footer": {
+      "brandName": "YourName",
+      "thanks": "Thanks for visiting my portfolio!",
+      "copy": "© 2025 YourName. All rights reserved."
+    }
 
     },
 
@@ -86,7 +108,30 @@
           "link": "مطالعه بیشتر..."
           }
         ]
-      }
+      },
+
+      "skill":{
+        "title": "مهارت های من"
+      },
+
+      "contact": {
+        "title": "تماس با من",
+        "description": "خوشحال می‌شوم از شما بشنوم! چه سوالی داشته باشید، چه پروژه‌ای، یا فقط بخواهید سلام کنید — از طریق این فرم با من در تماس باشید.",
+        "form": {
+          "name": "نام شما",
+          "email": "ایمیل شما",
+          "message": "پیام شما...",
+          "submit": "ارسال پیام"
+        }
+      },
+
+      "footer": {
+      "brandName": "zizi",
+      "thanks": "از بازدید شما از نمونه‌کارم سپاسگزارم!",
+      "copy": "© ۲۰۲۵  تمامی حقوق محفوظ است "
+    }
+
+
   
     }
   }

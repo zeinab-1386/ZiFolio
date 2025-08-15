@@ -355,6 +355,9 @@ transform: translateZ(0);
     padding: 4rem 2rem;
     height: 100vh;
     flex-wrap: wrap;
+    direction: ltr;
+    text-align: left;
+  
   }
   
   .slider-text {
@@ -437,7 +440,7 @@ transform: translateZ(0);
     text-align: center;
   }
 
-  .caption a{
+  .linka{
     margin: 10px;
     padding: 10px;
     border-radius: 10px;
@@ -447,7 +450,7 @@ transform: translateZ(0);
     transition:.5s;
   }
 
-  .caption a:hover{
+  .linka:hover{
     background-color: #2d0941;
   }
   
