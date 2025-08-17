@@ -23,7 +23,7 @@
   <button id="lang-toggle" style="background:none; border:none; cursor:pointer; font-size:24px;">
   <span class="fi fi-ir fis"></span> 
 </button>
-</button>
+
 </div>
 
   <div class="box">
@@ -183,7 +183,7 @@ function toggleMenu() {
   </script>
 
 
-<section class="slider-section" class="no-rtl">
+<section class="slider-section no-rtl">
   <div class="slider-text">
     <h1 data-key="slider.title">automating<br>reflection</h1>
     <p data-key="slider.subtitle">cutting-edge reflection station for students and teachers, combining hardware and AI technology.</p>
