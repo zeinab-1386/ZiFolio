@@ -20,9 +20,8 @@
   <a href="#" data-key="header.about">About</a>
   <a href="#" data-key="header.services">Services</a>
   <a href="#" data-key="header.contact">Contact</a>
-  <button id="lang-toggle" style="background:none; border:none; cursor:pointer; font-size:24px;">
-  <span class="fi fi-ir fis"></span> 
-</button>
+
+
 
 </div>
 
@@ -41,6 +40,11 @@
       </div> -->
         <!-- دکمه تماس -->
         <button class="contact-btn" data-key="header.callMe" id="contactBtn" onclick="callNow()">Call Me !</button>
+
+        <button id="lang-toggle" style="background:none; border:none; cursor:pointer; font-size:24px;">
+  <span class="fi fi-ir fis"></span> 
+</button>
+
   </div>
 
 
